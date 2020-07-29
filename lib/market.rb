@@ -3,10 +3,12 @@ require 'date'
 class Market
 
   attr_reader :name,
-              :vendors
+              :vendors,
+              :date
   def initialize(name)
     @name = name
     @vendors = []
+    @date = Date.today.strftime("%d/%m/%Y")
   end
 
   def add_vendor(vendor)
@@ -52,9 +54,5 @@ class Market
     total_inventory.keys.map do |item|
       item.name
     end.sort
-  end
-
-  def date
-    Date.today.strftime("%d/%m/%Y")
   end
 end
