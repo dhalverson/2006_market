@@ -57,6 +57,4 @@ class Market
   def date
     Date.today.strftime("%d/%m/%Y")
   end
-
-
 end
