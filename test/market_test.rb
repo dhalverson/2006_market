@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'mocha/minitest'
 require './lib/item'
 require './lib/vendor'
 require './lib/market'
@@ -167,8 +168,10 @@ class MarketTest < Minitest::Test
     item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
     item5 = Item.new({name: 'Onion', price: '$0.25'})
 
-    assert_equal "29/07/2020", market.date
+    market.stubs(:date).returns("24/02/2020")
+    assert_equal "24/02/2020", market.date
   end
+
 
 
 end
