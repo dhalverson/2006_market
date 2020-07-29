@@ -34,6 +34,11 @@ class MarketTest < Minitest::Test
     vendor3.stock(item1, 65)
 
     assert_equal [], market.vendors
+    market.add_vendor(vendor1)
+    market.add_vendor(vendor2)
+    market.add_vendor(vendor3)
+
+    assert_equal [vendor1, vendor2, vendor3], market.vendors
   end
 
 end
