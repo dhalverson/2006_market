@@ -3,6 +3,7 @@ require 'minitest/pride'
 require './lib/item'
 require './lib/vendor'
 require './lib/market'
+require 'date'
 
 class MarketTest < Minitest::Test
 
@@ -156,6 +157,17 @@ class MarketTest < Minitest::Test
 
     expected = ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"]
     assert_equal expected, market.sorted_item_list
+  end
+
+  def test_it_can_return_date
+    market = Market.new("South Pearl Street Farmers Market")
+    item1 = Item.new({name: 'Peach', price: "$0.75"})
+    item2 = Item.new({name: 'Tomato', price: '$0.50'})
+    item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
+    item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
+    item5 = Item.new({name: 'Onion', price: '$0.25'})
+
+    assert_equal "29/07/2020", market.date
   end
 
 

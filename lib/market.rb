@@ -1,3 +1,5 @@
+require 'date'
+
 class Market
 
   attr_reader :name,
@@ -50,6 +52,10 @@ class Market
     total_inventory.keys.map do |item|
       item.name
     end.sort
+  end
+
+  def date
+    Date.today.strftime("%d/%m/%Y")
   end
 
 
