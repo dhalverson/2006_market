@@ -33,7 +33,7 @@ class VendorTest < Minitest::Test
     assert_equal ({}), vendor.inventory
     vendor.stock(item1, 30)
 
-    assert_equal ({item1 => 30})
+    assert_equal ({item1 => 30}), vendor.inventory
   end
 
 end
